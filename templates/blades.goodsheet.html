@@ -1,0 +1,295 @@
+<form class="blades-in-the-dark actor pc {{cssClass}} actor-sheet blades-goodsheet" style="min-width: 700px; max-width: 100vw; width: 100%;" autocomplete="off">
+  <div class="goodsheet-columns flex-horizontal" style="gap: 12px; width: 100%;">
+    <!-- Column 1 -->
+    <div class="goodsheet-col col1 flex-vertical" style="flex: 1 1 260px; min-width: 220px; max-width: 40%;">
+      <!-- Character Top Block -->
+      <section class="top-block flex-horizontal" style="gap: 2px; align-items: flex-start; padding: 2px 0 0 0; margin-bottom: 0;">
+        <img src="{{img}}" data-edit="img" data-tooltip="{{name}}" class="portrait" style="width: 80px; height: 80px; margin-right: 8px; margin-bottom: 0; float: left;"/>
+        <div style="flex: 1;">
+          <div style="margin-bottom: 0px;">
+            <label style="margin-bottom: 0;"><b>{{localize "BITD.Name"}}</b></label>
+            <input type="text" class="name" name="name" value="{{name}}" style="margin-bottom: 0; margin-top: 0; padding-top: 2px; padding-bottom: 0px;">
+          </div>
+          <div id="character-{{_id}}-traits" class="flex-column" style="gap: 2px;">
+            <div class="flex-horizontal" style="gap: 8px; margin-bottom: 0;">
+              <div class="item-block flex-horizontal" style="gap: 2px; flex: 1;">
+                <div class="item-class-label" style="margin-bottom: 0;"><a class="item-add-popup" data-distinct="true" data-item-type="heritage"><b>{{localize "BITD.Heritage"}}</b></a></div>
+                {{#each items as |item id|}}
+                  {{#if (eq item.type "heritage")}}
+                  <div class="item flex-horizontal" data-item-id="{{item._id}}">
+                    <div class="item-body flex-horizontal">
+                      <div class="item-name" style="max-width: 110px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{item.name}}</div>
+                    </div>
+                    <a class="item-control item-post" data-tooltip="{{localize 'BITD.TitlePostItem'}}"><i class="fas fa-comment"></i></a>
+                  </div>
+                  {{/if}}
+              {{/each}}
+              </div>
+              <div class="item-block flex-horizontal" style="gap: 2px; flex: 1;">
+                <div class="item-class-label" style="margin-bottom: 0;"><a class="item-add-popup" data-distinct="true" data-item-type="background"><b>{{localize "BITD.Background"}}</b></a></div>
+                {{#each items as |item id|}}
+                  {{#if (eq item.type "background")}}
+                  <div class="item flex-horizontal" data-item-id="{{item._id}}">
+                    <div class="item-body flex-horizontal">
+                      <div class="item-name" style="max-width: 110px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{item.name}}</div>
+                    </div>
+                    <a class="item-control item-post" data-tooltip="{{localize 'BITD.TitlePostItem'}}"><i class="fas fa-comment"></i></a>
+                  </div>
+                  {{/if}}
+              {{/each}}
+              </div>
+            </div>
+            <div class="flex-horizontal" style="gap: 8px; margin-top: 0;">
+              <div class="item-block flex-horizontal" style="min-width: 120px; gap: 2px; flex: 1;">
+                <div class="item-class-label" style="margin-bottom: 0;"><a class="item-add-popup" data-distinct="true" data-item-type="vice"><b>{{localize "BITD.Vice"}}</b></a></div>
+                {{#each items as |item id|}}
+                    {{#if (eq item.type "vice")}}
+                    <div class="item flex-horizontal" data-item-id="{{item._id}}">
+                      <div class="item-body flex-horizontal">
+                        <div class="item-name" style="max-width: 110px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{item.name}}</div>
+                      </div>
+                      <a class="item-control item-post" data-tooltip="{{localize 'BITD.TitlePostItem'}}"><i class="fas fa-comment"></i></a>
+                    </div>
+                    {{/if}}
+                {{/each}}
+              </div>
+              <div class="item-block flex-horizontal" style="min-width: 120px; gap: 2px; flex: 1;">
+                <div class="item-class-label" style="margin-bottom: 0;"><a class="item-add-popup" data-distinct="true" data-item-type="crew"><b>{{localize "BITD.CrewName"}}</b></a></div>
+                {{#each system.crew as |item id|}}
+                  {{#unless (eq item.name undefined)}}
+                    <div class="item flex-horizontal" data-item-id="{{item.id}}" data-item-type="{{item.type}}">
+                      <div class="open-friend flex-horizontal" style="margin-right: 10px">
+                        <div>
+                          <a class="open-friend">{{item.name}}</a>
+                        </div>
+                      </div>
+                      <a style="visibility:hidden" class="item-control item-post" title="{{localize 'BITD.TitlePostItem'}}"><i class="fas fa-comment"></i></a>
+                    </div>
+                  {{/unless}}
+                {{/each}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Stress and Trauma -->
+      <section id="character-{{_id}}-stress-trauma" class="section big-teeth-section" style="display: flex; flex-direction: row; align-items: left; gap: 0px; margin-bottom: 0;">
+        <div id="character-{{_id}}-stress" class="big-teeth character-stress" style="flex: 2; margin-bottom: 0;">
+          {{#multiboxes system.stress.value}}
+            <input type="radio" id="character-{{_id}}-stress-0" name="system.stress.value" value="0" dtype="Radio">
+            <label class="black-label" for="character-{{_id}}-stress-0">{{localize system.stress.name}}</label>
+            {{#times_from 1 system.stress.max}}
+              <input type="radio" id="character-{{../_id}}-stress-{{this}}" name="system.stress.value" value="{{this}}" dtype="Radio">
+              <label class="radio-toggle" for="character-{{../_id}}-stress-{{this}}"></label>
+            {{/times_from}}
+          {{/multiboxes}}
+        </div>
+        <div id="character-{{_id}}-armor-uses" class="armor-uses" style="flex: 0 0 auto; min-width: 20px; display: flex; flex-direction: column; gap: 2px; align-items: flex-start; justify-content: center; margin: 0;">
+          <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 2px;">
+            <input id="character-{{_id}}-armor-uses-armor" type="checkbox" name="system.armor-uses.armor" {{checked system.armor-uses.armor}}>
+            <span>{{localize "BITD.Armor"}}</span>
+          </div>
+          <div style="display: flex; align-items: left; gap: 0px;">
+            <input id="character-{{_id}}-armor-uses-special1" type="checkbox" name="system.armor-uses.special1" {{checked system.armor-uses.special1}}>
+            <input id="character-{{_id}}-armor-uses-special2" type="checkbox" name="system.armor-uses.special2" {{checked system.armor-uses.special2}}>
+          </div>
+        </div>
+      </section>
+      <!-- Deadlocks -->
+      <section id="character-{{_id}}-keys" class="flex harm-armor harm-healing-section">
+        <div id="character-{{_id}}-character-harm" class="character-harm" style="width: 100%;">
+            <table class="harm-table" style="width: 100%; table-layout: fixed;">
+                <thead>
+                <tr>
+                    <th class="black-white" style="text-align: left; padding-left: 8px">{{localize "Keys"}}</th>
+                    <th class="black-white" style="text-align: right; padding-right: 8px;">{{localize "Deadlocks"}}</th>
+                </tr>
+                </thead>
+            <tbody>
+                <tr>
+                <td><input type="text" name="system.customTable.0.0" value="{{lookup (lookup system.customTable 0) 0}}" style="width: 100%;"></td>
+                <td><input type="text" name="system.customTable.0.1" value="{{lookup (lookup system.customTable 0) 1}}" style="width: 100%;"></td>
+                </tr>
+                <tr>
+                <td><input type="text" name="system.customTable.1.0" value="{{lookup (lookup system.customTable 1) 0}}" style="width: 100%;"></td>
+                <td><input type="text" name="system.customTable.1.1" value="{{lookup (lookup system.customTable 1) 1}}" style="width: 100%;"></td>
+                </tr>
+                <tr>
+                <td><input type="text" name="system.customTable.2.0" value="{{lookup (lookup system.customTable 2) 0}}" style="width: 100%;"></td>
+                <td><input type="text" name="system.customTable.2.1" value="{{lookup (lookup system.customTable 2) 1}}" style="width: 100%;"></td>
+                </tr>
+                <tr>
+                <td><input type="text" name="system.customTable.3.0" value="{{lookup (lookup system.customTable 3) 0}}" style="width: 100%;"></td>
+                <td><input type="text" name="system.customTable.3.1" value="{{lookup (lookup system.customTable 3) 1}}" style="width: 100%;"></td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+      </section>
+      <!-- Harm, Healing -->
+      <section id="character-{{_id}}-harm-healing" class="flex harm-armor harm-healing-section">
+        <div id="character-{{_id}}-character-harm" class="character-harm" style="width: 100%;">
+          <table class="harm-table" style="width: 100%; table-layout: fixed;">
+            <thead>
+              <tr>
+                <th class="black-white" style="text-align: left; padding-left: 8px">{{localize "BITD.Harm"}}</th>
+                <th class="black-white" colspan="3" style="text-align: left;"></th>
+                <th class="black-white" colspan="3" style="text-align: left;"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="harm-label" style="color: #7d7d7d; width: 10px; vertical-align: top;">4. {{localize "Mortal"}}</td>
+                <td colspan="3" style="vertical-align: top;">
+                  <input type="text" id="character-{{_id}}-harm-4-1" name="system.harm.mortal" value="{{system.harm.mortal}}" class="harm-input single" style="width: 100%;">
+                </td>
+                <td class="healing-cell" rowspan="2" colspan="2" style="vertical-align: top; width: 180px; min-width: 140px; background: none; padding-left: 8px;">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <label style="font-weight: bold; margin-bottom: 0;">{{localize "BITD.Healing"}}</label>
+                    <div id="character-{{_id}}-health-clock" class="character-health-clock clocks-{{system.healing_clock.max}} small-healing-clock" style="margin-bottom: 0;">
+                      {{#if system.healing_clock}}
+                        {{{blades-clock "system.healing_clock.value" system.healing_clock.max system.healing_clock.value _id}}}
+                      {{/if}}
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="harm-label" style="color: #7d7d7d; vertical-align: top;">3. {{localize "Critical"}}</td>
+                <td colspan="3" style="vertical-align: top;">
+                  <input type="text" id="character-{{_id}}-harm-3-1" name="system.harm.critical" value="{{system.harm.critical}}" class="harm-input single" style="width: 100%;">
+                </td>
+              </tr>
+              <tr>
+                <td class="harm-label" style="color: #7d7d7d;">2. {{localize "Major"}}</td>
+                <td colspan="3" style="vertical-align: top;">
+                  <input type="text" id="character-{{_id}}-harm-2-1" name="system.harm.major.one" value="{{system.harm.major.one}}" class="harm-input" style="width: 98%;">
+                </td>
+                <td colspan="3" style="vertical-align: top;">
+                  <input type="text" id="character-{{_id}}-harm-2-2" name="system.harm.major.two" value="{{system.harm.major.two}}" class="harm-input" style="width: 98%;">
+                </td>
+              </tr>
+              <tr>
+                <td class="harm-label" style="color: #7d7d7d;">1. {{localize "Passing"}}</td>
+                <td colspan="3" style="vertical-align: top;">
+                  <input type="text" id="character-{{_id}}-harm-1-1" name="system.harm.passing.one" value="{{system.harm.passing.one}}" class="harm-input" style="width: 98%;">
+                </td>
+                <td colspan="3" style="vertical-align: top;">
+                  <input type="text" id="character-{{_id}}-harm-1-2" name="system.harm.passing.two" value="{{system.harm.passing.two}}" class="harm-input" style="width: 98%;">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+    <!-- Column 2 -->
+    <div class="goodsheet-col col2 flex-vertical" style="flex: 1 1 200px; min-width: 180px; max-width: 34%;">
+      <!-- Abilities -->
+      <section class="abilities-section">
+        <div class="label-stripe">
+            <p><a class="item-add-popup" data-distinct="true" data-item-type="class" style="min-width: 10px;">A {{system.playbook}}</a></p>
+          <p><a class="item-add-popup" data-item-type="ability" data-tooltip="{{localize 'BITD.AddAbility'}}"><i class="fas fa-plus-square" style="padding-left: 5px;"></i></a></p>
+          {{#if (getSetting 'ClockXP')}}
+		  {{else}}
+		  <div id="character-{{_id}}-experience" class="teeth-experience">
+            <!--<label for="character-{{_id}}-experience-0"><i class="fab fa-creative-commons-zero nullifier"></i></label>-->
+            {{#multiboxes system.experience}}
+            <input type="radio" id="character-{{_id}}-experience-0" name="system.experience" value="0" dtype="Radio">
+            {{#times_from 1 system.experience_max}}
+            <input type="radio" id="character-{{_id}}-experience-{{this}}" name="system.experience" value="{{this}}" dtype="Radio">
+            <label class="radio-toggle" for="character-{{_id}}-experience-{{this}}"></label>
+            {{/times_from}}
+            {{/multiboxes}}
+          </div>
+		  {{/if}} </div>
+        <div>
+          {{#each items as |item id|}}
+            {{#if (eq item.type "ability")}}
+              <div class="item flex-horizontal" data-item-id="{{item._id}}">
+                <div class="item-body flex-horizontal">
+                  <b><div class="item-name">{{item.name}}</div></b>
+                  <div class="item-description">{{{item.system.description}}}</div>
+                </div>
+                <a class="item-control item-delete" data-tooltip="{{localize 'BITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+                <a class="item-control item-post" data-tooltip="{{localize 'BITD.TitlePostItem'}}"><i class="fas fa-comment"></i></a>
+              </div>
+            {{/if}}
+          {{/each}}
+        </div>
+      </section>
+      <!-- Contacts -->
+      <section class="contacts-section" style="margin-top: 16px;">
+        <div class="label-stripe">
+          <label>{{localize system.acquaintances_label}}</label>
+          <!-- <a class="import-contacts" data-tooltip="{{localize 'BITD.ImportPlaybookContacts'}}"><i class="fa-solid fa-file-import"></i></a>
+            -->
+        </div>
+        <div>
+          {{#if system.acquaintances}}
+            {{#each system.acquaintances as |item id|}}
+              <div class="item flex-horizontal" data-item-id="{{item.id}}" data-item-type="{{item.type}}">
+                <div class="acquaintance" data-acquaintance="{{this.id}}">
+                  <i data-acquaintance="{{this.id}}" class="standing-toggle fas
+                    {{#if (eq this.standing 'friend')}} fa-caret-up green-icon
+                    {{else if (eq this.standing 'rival')}} fa-caret-down red-icon
+                    {{else}}fa-minus
+                    {{/if}}"></i>
+                  <a class="open-friend"><strong>{{this.name}}</strong></a>, {{this.description_short}}
+                </div>
+                <a class="acquaintance-delete" data-tooltip="{{localize 'BITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+              </div>
+            {{/each}}
+          {{/if}}
+        </div>
+      </section>
+    </div>
+    <!-- Column 3 -->
+    <div class="goodsheet-col col3 flex-vertical" style="flex: 1 1 160px; min-width: 140px; max-width: 25%;">
+      <!-- Coin and Stash -->
+      <section class="coin-section">
+        <div id="character-{{_id}}-coins" class="coins-section flex-vertical" style="gap: 8px; align-items: flex-start; width: 230px; min-width: 0;">
+          {{> "systems/blades-in-the-dark/templates/parts/coins.html" actor=actor}}
+        </div>
+      </section>
+      <!-- Attributes -->
+      <section class="attributes-section" style="margin-top: 12px;">
+        <div id="character-{{_id}}-attributes" class="attributes">
+          {{> "systems/blades-in-the-dark/templates/parts/attributes.html" actor=actor}}
+        </div>
+      </section>
+      <!-- Loadout -->
+      <section class="loadout-section" style="margin-top: 12px; width: 200px; min-width: 0;">
+        <div class="label-stripe flex-horizontal" style="align-items: center;">
+          <p style="margin: 0;">{{localize "BITD.Loadout"}} <a class="item-add-popup" data-item-type="item" data-tooltip="{{localize 'BITD.AddItem'}}"><i class="fas fa-plus-square" style="margin-left: 4px;"></i></a></p>
+          <span id="loadout-toggle" 
+            style="margin-left: 12px; font-weight: bold; cursor: pointer; user-select: none; display: inline-block; vertical-align: middle;"
+            data-current-load="{{system.loadout}}"
+            onclick="const input = this.nextElementSibling;
+              input.value = (input.value === 'normal' ? 'heavy' : 'normal');
+              var isHeavy = input.value === 'heavy';
+              var max = isHeavy ? 6 : 3;
+              var label = isHeavy ? 'Loud' : 'Quiet';
+              var current = this.getAttribute('data-current-load');
+              this.innerText = current + ' / ' + max + ' (' + label + ')';">
+            {{#if (eq system.selected_load_level 'heavy')}}{{system.loadout}} / 6 (Loud){{else}}{{system.loadout}} / 3 (Quiet){{/if}}
+          </span>
+          <input type="hidden" name="system.selected_load_level" value="{{system.selected_load_level}}">
+        </div>
+        <div>
+          {{#each items as |item id|}}
+            {{#if (eq item.type "item")}}
+              <div class="item flex-horizontal" data-item-id="{{item._id}}">
+                <div class="item-body flex-horizontal">
+                  <div class="item-name" data-tooltip="{{item.system.description}}">{{item.name}}</div>
+                </div>
+                <a class="item-control item-delete" data-tooltip="{{localize 'BITD.TitleDeleteItem'}}"><i class="fas fa-trash"></i></a>
+                <a class="item-control item-post" data-tooltip="{{localize 'BITD.TitlePostItem'}}"><i class="fas fa-comment"></i></a>
+              </div>
+            {{/if}}
+          {{/each}}
+        </div>
+      </section>
+    </div>
+  </div>
+</form>
