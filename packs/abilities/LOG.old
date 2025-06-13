@@ -1,5 +1,11 @@
-2025/06/13-12:11:58.678 34ec Log #359: 0 ops saved to Table #360 OK
-2025/06/13-12:11:58.678 34ec Archiving D:\FoundryData\Foundry Data\Data\systems\Blades68\packs\abilities/000359.log: OK
-2025/06/13-12:11:58.678 34ec Table #343: 97 entries OK
-2025/06/13-12:11:58.681 34ec Archiving D:\FoundryData\Foundry Data\Data\systems\Blades68\packs\abilities/MANIFEST-000358: OK
-2025/06/13-12:11:58.683 34ec **** Repaired leveldb D:\FoundryData\Foundry Data\Data\systems\Blades68\packs\abilities; recovered 1 files; 29447 bytes. Some data may have been lost. ****
+2025/06/13-12:11:58.693 34ec Delete type=3 #1
+2025/06/13-12:12:09.351 3ccc Level-0 table #364: started
+2025/06/13-12:12:09.351 3ccc Level-0 table #364: 0 bytes OK
+2025/06/13-12:12:09.354 3ccc Delete type=0 #362
+2025/06/13-12:12:09.361 3ccc Manual compaction at level-0 from '!items!0IDmKmW3AiaNEBpE' @ 72057594037927935 : 1 .. '!items.effects!gYBmf02iYIwun3NM.iYmG7aLfZr9gqFSr' @ 0 : 0; will stop at '!items.effects!gYBmf02iYIwun3NM.iYmG7aLfZr9gqFSr' @ 210 : 1
+2025/06/13-12:12:09.361 3ccc Compacting 1@0 + 0@1 files
+2025/06/13-12:12:09.364 3ccc Generated table #365@0: 97 keys, 29447 bytes
+2025/06/13-12:12:09.364 3ccc Compacted 1@0 + 0@1 files => 29447 bytes
+2025/06/13-12:12:09.366 3ccc compacted to: files[ 0 1 0 0 0 0 0 ]
+2025/06/13-12:12:09.366 3ccc Delete type=2 #343
+2025/06/13-12:12:09.373 3ccc Manual compaction at level-0 from '!items.effects!gYBmf02iYIwun3NM.iYmG7aLfZr9gqFSr' @ 210 : 1 .. '!items.effects!gYBmf02iYIwun3NM.iYmG7aLfZr9gqFSr' @ 0 : 0; will stop at (end)
