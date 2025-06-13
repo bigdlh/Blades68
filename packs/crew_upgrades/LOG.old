@@ -1,7 +1,5 @@
-2025/06/06-15:28:23.010 3578 Recovering log #311
-2025/06/06-15:28:23.014 3578 Delete type=0 #311
-2025/06/06-15:28:23.014 3578 Delete type=3 #310
-2025/06/06-15:28:27.764 44ac Level-0 table #315: started
-2025/06/06-15:28:27.764 44ac Level-0 table #315: 0 bytes OK
-2025/06/06-15:28:27.766 44ac Delete type=0 #313
-2025/06/06-15:28:27.772 44ac Manual compaction at level-0 from '!items!0ZkRqMJWSDzjUoPp' @ 72057594037927935 : 1 .. '!items.effects!ydS2afjt3GUZD7HQ.q4o4BM4NtWAgAYJx' @ 0 : 0; will stop at (end)
+2025/06/13-12:11:58.735 36c0 Log #317: 0 ops saved to Table #318 OK
+2025/06/13-12:11:58.735 36c0 Archiving D:\FoundryData\Foundry Data\Data\systems\Blades68\packs\crew_upgrades/000317.log: OK
+2025/06/13-12:11:58.736 36c0 Table #301: 67 entries OK
+2025/06/13-12:11:58.738 36c0 Archiving D:\FoundryData\Foundry Data\Data\systems\Blades68\packs\crew_upgrades/MANIFEST-000316: OK
+2025/06/13-12:11:58.740 36c0 **** Repaired leveldb D:\FoundryData\Foundry Data\Data\systems\Blades68\packs\crew_upgrades; recovered 1 files; 15484 bytes. Some data may have been lost. ****

@@ -1,7 +1,5 @@
-2025/06/06-15:28:23.031 66f0 Recovering log #191
-2025/06/06-15:28:23.035 66f0 Delete type=0 #191
-2025/06/06-15:28:23.035 66f0 Delete type=3 #190
-2025/06/06-15:28:27.773 44ac Level-0 table #195: started
-2025/06/06-15:28:27.773 44ac Level-0 table #195: 0 bytes OK
-2025/06/06-15:28:27.775 44ac Delete type=0 #193
-2025/06/06-15:28:27.781 44ac Manual compaction at level-0 from '!items!2K5r1qw5ksVTCTPG' @ 72057594037927935 : 1 .. '!items!zs5YXCKaGGg8WhLU' @ 0 : 0; will stop at (end)
+2025/06/13-12:11:58.782 24e0 Log #197: 0 ops saved to Table #198 OK
+2025/06/13-12:11:58.783 24e0 Archiving D:\FoundryData\Foundry Data\Data\systems\Blades68\packs\factions/000197.log: OK
+2025/06/13-12:11:58.783 24e0 Table #23: 43 entries OK
+2025/06/13-12:11:58.785 24e0 Archiving D:\FoundryData\Foundry Data\Data\systems\Blades68\packs\factions/MANIFEST-000196: OK
+2025/06/13-12:11:58.787 24e0 **** Repaired leveldb D:\FoundryData\Foundry Data\Data\systems\Blades68\packs\factions; recovered 1 files; 37124 bytes. Some data may have been lost. ****

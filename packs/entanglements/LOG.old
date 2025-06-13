@@ -1,7 +1,5 @@
-2025/06/06-15:28:23.045 66f0 Recovering log #191
-2025/06/06-15:28:23.049 66f0 Delete type=0 #191
-2025/06/06-15:28:23.049 66f0 Delete type=3 #190
-2025/06/06-15:28:27.775 44ac Level-0 table #195: started
-2025/06/06-15:28:27.776 44ac Level-0 table #195: 0 bytes OK
-2025/06/06-15:28:27.777 44ac Delete type=0 #193
-2025/06/06-15:28:27.781 44ac Manual compaction at level-0 from '!tables!GN4cmCUN0g3Cw0N2' @ 72057594037927935 : 1 .. '!tables.results!syT1MX2iL5HMfOok.jVJhLukc03j1ZNfd' @ 0 : 0; will stop at (end)
+2025/06/13-12:11:58.815 34ec Log #197: 0 ops saved to Table #198 OK
+2025/06/13-12:11:58.815 34ec Archiving D:\FoundryData\Foundry Data\Data\systems\Blades68\packs\entanglements/000197.log: OK
+2025/06/13-12:11:58.815 34ec Table #23: 18 entries OK
+2025/06/13-12:11:58.817 34ec Archiving D:\FoundryData\Foundry Data\Data\systems\Blades68\packs\entanglements/MANIFEST-000196: OK
+2025/06/13-12:11:58.820 34ec **** Repaired leveldb D:\FoundryData\Foundry Data\Data\systems\Blades68\packs\entanglements; recovered 1 files; 2436 bytes. Some data may have been lost. ****

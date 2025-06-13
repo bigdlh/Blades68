@@ -11,7 +11,7 @@ export class BladesGoodSheet extends BladesSheet {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["blades-in-the-dark", "sheet", "actor", "goodsheet"],
-      template: "systems/blades-in-the-dark/templates/blades.goodsheet.html",
+      template: "systems/Blades68/templates/blades.goodsheet.html",
       width: 1100,
       height: "auto"
     });

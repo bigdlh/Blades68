@@ -12,7 +12,7 @@ export class BladesActorSheet extends BladesSheet {
 	static get defaultOptions() {
 	  return foundry.utils.mergeObject(super.defaultOptions, {
   	  classes: ["blades-in-the-dark", "sheet", "actor", "pc"],
-  	  template: "systems/blades-in-the-dark/templates/actor-sheet.html",
+  	  template: "systems/Blades68/templates/actor-sheet.html",
       width: 790,
       height: 890,
       tabs: [{navSelector: ".tabs", contentSelector: ".tab-content", initial: "abilities"}]

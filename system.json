@@ -7,7 +7,7 @@
     "minimum": 11,
     "verified": "13.334"
   },
-  "background": "systems/blades-in-the-dark/images/BITD_title.webp",
+  "background": "systems/Blades68/images/BITD_title.webp",
   "url": "https://github.com/bigdlh/Blades68",
 "manifest": "https://github.com/bigdlh/Blades68/releases/latest/download/system.json",
   "download": "https://github.com/bigdlh/Blades68/releases/download/1.0/system.zip",
@@ -71,7 +71,7 @@
       "label": "Classes",
       "system": "blades-in-the-dark",
       "path": "./packs/classes.db",
-      "banner": "systems/blades-in-the-dark/images/compendium-banners/Doskvol_00.webp",
+      "banner": "systems/Blades68/images/compendium-banners/Doskvol_00.webp",
       "type": "Item"
     },
     {
@@ -79,7 +79,7 @@
       "label": "Heritages",
       "system": "blades-in-the-dark",
       "path": "./packs/heritages.db",
-      "banner": "systems/blades-in-the-dark/images/compendium-banners/Doskvol_01.webp",
+      "banner": "systems/Blades68/images/compendium-banners/Doskvol_01.webp",
       "type": "Item"
     },
     {
@@ -87,7 +87,7 @@
       "label": "Vices",
       "system": "blades-in-the-dark",
       "path": "./packs/vices.db",
-      "banner": "systems/blades-in-the-dark/images/compendium-banners/Doskvol_02.webp",
+      "banner": "systems/Blades68/images/compendium-banners/Doskvol_02.webp",
       "type": "Item"
     },
     {
@@ -95,7 +95,7 @@
       "label": "Prisons",
       "system": "blades-in-the-dark",
       "path": "./packs/prison.db",
-      "banner": "systems/blades-in-the-dark/images/compendium-banners/Doskvol_03.webp",
+      "banner": "systems/Blades68/images/compendium-banners/Doskvol_03.webp",
       "type": "Item"
     },
     {
@@ -103,7 +103,7 @@
       "label": "Backgrounds",
       "system": "blades-in-the-dark",
       "path": "./packs/backgrounds.db",
-      "banner": "systems/blades-in-the-dark/images/compendium-banners/Doskvol_04.webp",
+      "banner": "systems/Blades68/images/compendium-banners/Doskvol_04.webp",
       "type": "Item"
     },
     {
@@ -111,7 +111,7 @@
       "label": "Items",
       "system": "blades-in-the-dark",
       "path": "./packs/items.db",
-      "banner": "systems/blades-in-the-dark/images/compendium-banners/Doskvol_05.webp",
+      "banner": "systems/Blades68/images/compendium-banners/Doskvol_05.webp",
       "type": "Item"
     },
     {
@@ -119,7 +119,7 @@
       "label": "Abilities",
       "system": "blades-in-the-dark",
       "path": "./packs/abilities.db",
-      "banner": "systems/blades-in-the-dark/images/compendium-banners/Doskvol_06.webp",
+      "banner": "systems/Blades68/images/compendium-banners/Doskvol_06.webp",
       "type": "Item"
     },
     {
@@ -127,7 +127,7 @@
       "label": "Crew Reputation",
       "system": "blades-in-the-dark",
       "path": "./packs/crew_reputation.db",
-      "banner": "systems/blades-in-the-dark/images/compendium-banners/Doskvol_07.webp",
+      "banner": "systems/Blades68/images/compendium-banners/Doskvol_07.webp",
       "type": "Item"
     },
     {
@@ -135,7 +135,7 @@
       "label": "Crew Types",
       "system": "blades-in-the-dark",
       "path": "./packs/crew_types.db",
-      "banner": "systems/blades-in-the-dark/images/compendium-banners/Doskvol_08.webp",
+      "banner": "systems/Blades68/images/compendium-banners/Doskvol_08.webp",
       "type": "Item"
     },
     {
@@ -143,7 +143,7 @@
       "label": "Crew Upgrades",
       "system": "blades-in-the-dark",
       "path": "./packs/crew_upgrades.db",
-      "banner": "systems/blades-in-the-dark/images/compendium-banners/Doskvol_09.webp",
+      "banner": "systems/Blades68/images/compendium-banners/Doskvol_09.webp",
       "type": "Item"
     },
     {
@@ -151,7 +151,7 @@
       "label": "Crew Abilities",
       "system": "blades-in-the-dark",
       "path": "./packs/crew_abilities.db",
-      "banner": "systems/blades-in-the-dark/images/compendium-banners/Doskvol_10.webp",
+      "banner": "systems/Blades68/images/compendium-banners/Doskvol_10.webp",
       "type": "Item"
     },
     {
@@ -159,7 +159,7 @@
       "label": "Hunting Grounds",
       "system": "blades-in-the-dark",
       "path": "./packs/hunting_grounds.db",
-      "banner": "systems/blades-in-the-dark/images/compendium-banners/Doskvol_11.webp",
+      "banner": "systems/Blades68/images/compendium-banners/Doskvol_11.webp",
       "type": "Item"
     },
 	{
@@ -167,7 +167,7 @@
       "label": "Factions",
       "system": "blades-in-the-dark",
       "path": "./packs/factions.db",
-      "banner": "systems/blades-in-the-dark/images/compendium-banners/Doskvol_12.webp",
+      "banner": "systems/Blades68/images/compendium-banners/Doskvol_12.webp",
       "type": "Item"
     },
     {
@@ -175,7 +175,7 @@
       "label": "NPCs",
       "system": "blades-in-the-dark",
       "path": "./packs/npcs.db",
-      "banner": "systems/blades-in-the-dark/images/compendium-banners/Doskvol_13.webp",
+      "banner": "systems/Blades68/images/compendium-banners/Doskvol_13.webp",
       "type": "Actor"
     },
 	{
@@ -183,7 +183,7 @@
       "label": "Entanglements",
       "system": "blades-in-the-dark",
       "path": "./packs/entanglements.db",
-      "banner": "systems/blades-in-the-dark/images/compendium-banners/Doskvol_14.webp",
+      "banner": "systems/Blades68/images/compendium-banners/Doskvol_14.webp",
       "type": "RollTable"
     },
 	{
@@ -191,7 +191,7 @@
       "label": "Entanglements Journals",
       "system": "blades-in-the-dark",
       "path": "./packs/entanglements-journals.db",
-      "banner": "systems/blades-in-the-dark/images/compendium-banners/Doskvol_15.webp",
+      "banner": "systems/Blades68/images/compendium-banners/Doskvol_15.webp",
       "type": "JournalEntry"
     },
 	{
@@ -199,7 +199,7 @@
       "label": "Entanglements Macro",
       "system": "blades-in-the-dark",
       "path": "./packs/entanglements-macro.db",
-      "banner": "systems/blades-in-the-dark/images/compendium-banners/Doskvol_16.webp",
+      "banner": "systems/Blades68/images/compendium-banners/Doskvol_16.webp",
       "type": "Macro"
     }
   ],
