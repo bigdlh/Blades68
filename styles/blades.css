@@ -1913,14 +1913,8 @@
 
 /* Make the healing clock smaller on the goodsheet */
 .small-healing-clock .blades-clock {
-  transform: scale(.75);
+  transform: scale(.60);
   transform-origin: top left;
-}
-.small-healing-clock {
-  width: max-content;
-  height: max-content;
-  padding: 0;
-  margin: 0 auto;
 }
 
 

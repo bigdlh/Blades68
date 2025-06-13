@@ -6,9 +6,9 @@
       <section class="top-block flex-horizontal" style="gap: 2px; align-items: flex-start; padding: 2px 0 0 0; margin-bottom: 0;">
         <img src="{{img}}" data-edit="img" data-tooltip="{{name}}" class="portrait" style="width: 80px; height: 80px; margin-right: 8px; margin-bottom: 0; float: left;"/>
         <div style="flex: 1;">
-          <div style="margin-bottom: 0px;">
+          <div style="margin-bottom: 0px;" class="flex-horizontal" style="align-items: center;">
             <label style="margin-bottom: 0;"><b>{{localize "BITD.Name"}}</b></label>
-            <input type="text" class="name" name="name" value="{{name}}" style="margin-bottom: 0; margin-top: 0; padding-top: 2px; padding-bottom: 0px;">
+            <input type="text" class="name" name="name" value="{{name}}" style="margin-left: 8px;">
           </div>
           <div id="character-{{_id}}-traits" class="flex-column" style="gap: 2px;">
             <div class="flex-horizontal" style="gap: 8px; margin-bottom: 0;">
@@ -20,7 +20,6 @@
                     <div class="item-body flex-horizontal">
                       <div class="item-name" style="max-width: 110px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{item.name}}</div>
                     </div>
-                    <a class="item-control item-post" data-tooltip="{{localize 'BITD.TitlePostItem'}}"><i class="fas fa-comment"></i></a>
                   </div>
                   {{/if}}
               {{/each}}
@@ -33,7 +32,6 @@
                     <div class="item-body flex-horizontal">
                       <div class="item-name" style="max-width: 110px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{item.name}}</div>
                     </div>
-                    <a class="item-control item-post" data-tooltip="{{localize 'BITD.TitlePostItem'}}"><i class="fas fa-comment"></i></a>
                   </div>
                   {{/if}}
               {{/each}}
@@ -48,7 +46,6 @@
                       <div class="item-body flex-horizontal">
                         <div class="item-name" style="max-width: 110px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{item.name}}</div>
                       </div>
-                      <a class="item-control item-post" data-tooltip="{{localize 'BITD.TitlePostItem'}}"><i class="fas fa-comment"></i></a>
                     </div>
                     {{/if}}
                 {{/each}}
@@ -139,13 +136,13 @@
             </thead>
             <tbody>
               <tr>
-                <td class="harm-label" style="color: #7d7d7d; width: 10px; vertical-align: top;">4. {{localize "Mortal"}}</td>
+                <td class="harm-label" style="color: #7d7d7d; width: 10px; vertical-align: top;">{{localize "Mortal"}}</td>
                 <td colspan="3" style="vertical-align: top;">
                   <input type="text" id="character-{{_id}}-harm-4-1" name="system.harm.mortal" value="{{system.harm.mortal}}" class="harm-input single" style="width: 100%;">
                 </td>
-                <td class="healing-cell" rowspan="2" colspan="2" style="vertical-align: top; width: 180px; min-width: 140px; background: none; padding-left: 8px;">
-                  <div style="display: flex; align-items: center; gap: 8px;">
-                    <label style="font-weight: bold; margin-bottom: 0;">{{localize "BITD.Healing"}}</label>
+                <td class="healing-cell" rowspan="2" colspan="2" style="vertical-align: center;  padding-left: 8px;">
+                  <div style="display: flex; text-align: center; gap: 8px; height: 70px;">
+                    <label style="font-weight: bold; margin-bottom: 0; ">{{localize "BITD.Healing"}}</label>
                     <div id="character-{{_id}}-health-clock" class="character-health-clock clocks-{{system.healing_clock.max}} small-healing-clock" style="margin-bottom: 0;">
                       {{#if system.healing_clock}}
                         {{{blades-clock "system.healing_clock.value" system.healing_clock.max system.healing_clock.value _id}}}
@@ -155,13 +152,13 @@
                 </td>
               </tr>
               <tr>
-                <td class="harm-label" style="color: #7d7d7d; vertical-align: top;">3. {{localize "Critical"}}</td>
+                <td class="harm-label" style="color: #7d7d7d; vertical-align: top;">{{localize "Critical"}}</td>
                 <td colspan="3" style="vertical-align: top;">
                   <input type="text" id="character-{{_id}}-harm-3-1" name="system.harm.critical" value="{{system.harm.critical}}" class="harm-input single" style="width: 100%;">
                 </td>
               </tr>
               <tr>
-                <td class="harm-label" style="color: #7d7d7d;">2. {{localize "Major"}}</td>
+                <td class="harm-label" style="color: #7d7d7d;">{{localize "Major"}}</td>
                 <td colspan="3" style="vertical-align: top;">
                   <input type="text" id="character-{{_id}}-harm-2-1" name="system.harm.major.one" value="{{system.harm.major.one}}" class="harm-input" style="width: 98%;">
                 </td>
@@ -170,7 +167,7 @@
                 </td>
               </tr>
               <tr>
-                <td class="harm-label" style="color: #7d7d7d;">1. {{localize "Passing"}}</td>
+                <td class="harm-label" style="color: #7d7d7d;">{{localize "Passing"}}</td>
                 <td colspan="3" style="vertical-align: top;">
                   <input type="text" id="character-{{_id}}-harm-1-1" name="system.harm.passing.one" value="{{system.harm.passing.one}}" class="harm-input" style="width: 98%;">
                 </td>
@@ -182,38 +179,39 @@
           </table>
         </div>
       </section>
+        <textarea rows="4" name="system.description">{{{system.description}}}</textarea>
     </div>
     <!-- Column 2 -->
     <div class="goodsheet-col col2 flex-vertical" style="flex: 1 1 200px; min-width: 180px; max-width: 34%;">
       <!-- Abilities -->
       <section class="abilities-section">
         <div class="label-stripe">
-                  <div class="item-block flex-horizontal">
-                    {{#each items as |item id|}}
-                      {{#if (eq item.type "class")}}
-                        <div class="item flex-horizontal" data-item-id="{{item._id}}">
-                          <div class="item-body flex-horizontal">
-                            <div class="item-name" style="font-size: larger; margin-top: 8px;">{{item.name}}</div>
-                          </div>
-                        </div>
-                      {{/if}}
-                    {{/each}}
+          <div class="item-block flex-horizontal">
+            {{#each items as |item id|}}
+              {{#if (eq item.type "class")}}
+                <div class="item flex-horizontal" data-item-id="{{item._id}}">
+                  <div class="item-body flex-horizontal">
+                    <div class="item-name" style="margin-top: 8px;">{{item.name}}</div>
                   </div>
-                  <p><a class="item-add-popup" data-item-type="ability" data-tooltip="{{localize 'BITD.AddAbility'}}"><i class="fas fa-plus-square" style="padding-left: 5px; margin-top: 2px;"></i></a></p>
-                  {{#if (getSetting 'ClockXP')}}
-                  {{else}}
-                  <div id="character-{{_id}}-experience" class="teeth-experience">
-                    <!--<label for="character-{{_id}}-experience-0"><i class="fab fa-creative-commons-zero nullifier"></i></label>-->
-                    {{#multiboxes system.experience}}
-                    <input type="radio" id="character-{{_id}}-experience-0" name="system.experience" value="0" dtype="Radio">
-                    {{#times_from 1 system.experience_max}}
-                    <input type="radio" id="character-{{_id}}-experience-{{this}}" name="system.experience" value="{{this}}" dtype="Radio">
-                    <label class="radio-toggle" for="character-{{_id}}-experience-{{this}}"></label>
-                    {{/times_from}}
-                    {{/multiboxes}}
-                  </div>
-                  {{/if}}
                 </div>
+              {{/if}}
+            {{/each}}
+          </div>
+          <p><a class="item-add-popup" data-item-type="ability" data-tooltip="{{localize 'BITD.AddAbility'}}"><i class="fas fa-plus-square" style="padding-left: 0px;"></i></a></p>
+          {{#if (getSetting 'ClockXP')}}
+          {{else}}
+          <div id="character-{{_id}}-experience" class="teeth-experience">
+            <!--<label for="character-{{_id}}-experience-0"><i class="fab fa-creative-commons-zero nullifier"></i></label>-->
+            {{#multiboxes system.experience}}
+            <input type="radio" id="character-{{_id}}-experience-0" name="system.experience" value="0" dtype="Radio">
+            {{#times_from 1 system.experience_max}}
+            <input type="radio" id="character-{{_id}}-experience-{{this}}" name="system.experience" value="{{this}}" dtype="Radio">
+            <label class="radio-toggle" for="character-{{_id}}-experience-{{this}}"></label>
+            {{/times_from}}
+            {{/multiboxes}}
+          </div>
+          {{/if}}
+        </div>
         <div>
           {{#each items as |item id|}}
             {{#if (eq item.type "ability")}}
@@ -231,9 +229,8 @@
       <!-- Contacts -->
       <section class="contacts-section" style="margin-top: 16px;">
         <div class="label-stripe">
-          <label>{{localize system.acquaintances_label}}</label>
-          <!-- <a class="import-contacts" data-tooltip="{{localize 'BITD.ImportPlaybookContacts'}}"><i class="fa-solid fa-file-import"></i></a>
-            -->
+          <p>{{localize system.acquaintances_label}}</p>
+          <!-- <a class="import-contacts" data-tooltip="{{localize 'BITD.ImportPlaybookContacts'}}"><i class="fa-solid fa-file-import"></i></a> -->
         </div>
         <div>
           {{#if system.acquaintances}}
